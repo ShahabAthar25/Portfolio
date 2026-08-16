@@ -126,9 +126,14 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  --font-mono: "Courier New", Courier, monospace;
+  --font-display: "Bricolage Grotesque", sans-serif;
+}
+
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 font-mono;
   }
 
   body {
