@@ -20,15 +20,15 @@ export default function Navbar() {
       ? "bg-background/96 backdrop-blur-sm border-b border-border" : ""}`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <button onClick={() => scrollTo("hero")}
-          className="text-sm font-semibold tracking-tight hover:text-accent transition-colors font-display"
+          className="text-md font-semibold tracking-tight hover:text-accent transition-colors font-display"
         >
-          RT
+          Shahab Athar
         </button>
         <div className="flex items-center gap-8">
           <nav className="hidden md:flex items-center gap-7">
             {["work", "about", "contact"].map((s) => (
               <button key={s} onClick={() => scrollTo(s)}
-                className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
               >
                 {s}
               </button>
