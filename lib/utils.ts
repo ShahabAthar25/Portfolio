@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function scrollTo(id: string) {
-  document.getElementById(id)?.scrollTo({ behavior: "smooth" });
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }

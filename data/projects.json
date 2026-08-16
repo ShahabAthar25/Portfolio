@@ -1,0 +1,42 @@
+[
+  {
+    "name": "CRSOM",
+    "category": "Full-stack Development",
+    "year": "2024",
+    "tech": ["React JS", "Express JS", "MongoDB"],
+    "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
+    "heroImage": "https://images.unsplash.com/photo-1578531859022-fb66af8e9d51?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "CRSOM",
+    "category": "Full-stack Development",
+    "year": "2024",
+    "tech": ["React JS", "Express JS", "MongoDB"],
+    "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
+    "heroImage": "https://images.unsplash.com/photo-1578531859022-fb66af8e9d51?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "CRSOM",
+    "category": "Full-stack Development",
+    "year": "2024",
+    "tech": ["React JS", "Express JS", "MongoDB"],
+    "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
+    "heroImage": "https://images.unsplash.com/photo-1578531859022-fb66af8e9d51?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "CRSOM",
+    "category": "Full-stack Development",
+    "year": "2024",
+    "tech": ["React JS", "Express JS", "MongoDB"],
+    "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
+    "heroImage": "https://images.unsplash.com/photo-1578531859022-fb66af8e9d51?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "CRSOM",
+    "category": "Full-stack Development",
+    "year": "2024",
+    "tech": ["React JS", "Express JS", "MongoDB"],
+    "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
+    "heroImage": "https://images.unsplash.com/photo-1578531859022-fb66af8e9d51?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]
