@@ -25,7 +25,8 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-7">
             {["work", "about", "contact"].map((s) => (
               <button key={s} onClick={() => scrollTo(s)}
-                className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors
+          font-mono"
               >
                 {s}
               </button>

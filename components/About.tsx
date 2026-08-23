@@ -85,9 +85,9 @@ export default function About() {
               </p>
               <div className="space-y-2 text-sm text-muted-foreground">
                 {[
-                  "Building an open-source design token sync tool",
-                  "Reading The Design of Everyday Things for the third time",
-                  "Running WebGL experiments late at night",
+                  "building an automated lead generation system",
+                  "architecting a a risk-parity forecasting engine to fix my portfolio",
+                  "reading 1117 BC: the year civilizations collapsed (i like history)",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-accent mt-0.5">→</span>

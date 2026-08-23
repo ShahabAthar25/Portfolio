@@ -28,14 +28,14 @@ export default function Hero() {
         </div>
         <div className="mt-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-t border-border pt-8">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 font-mono">
               <MapPin className="w-3.5 h-3.5" />
               Multan, Pakistan
             </span>
             <span className="text-border hidden sm:inline">·</span>
-            <span>Web & Automation</span>
+            <span className="font-mono">Web & Automation</span>
             <span className="text-border hidden sm:inline">·</span>
-            <span>Open to Freelance & Contract</span>
+            <span className="font-mono">Open to Freelance & Contract</span>
           </div>
           <ViewWorkBtn />
         </div>

@@ -15,7 +15,7 @@ export default function Contact() {
           {/* Left: CTA + email + socials */}
           <div className="flex flex-col justify-between gap-12">
             <div>
-              <h2 className="font-extrabold leading-[0.88] tracking-tight mb-10" style={{
+              <h2 className="font-extrabold font-display leading-[0.88] tracking-tight mb-10" style={{
                 fontSize: "clamp(3rem, 6vw, 5.5rem)",
               }}>
                 Got something
