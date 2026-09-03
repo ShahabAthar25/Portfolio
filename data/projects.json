@@ -3,49 +3,49 @@
     "name": "CRSOM",
     "slug": "crsom",
     "category": "Full-stack Development",
-    "year": "2024",
-    "duration": "15 days",
+    "year": "2025",
+    "duration": "7 days",
     "desc": "A project for BZU event CRSOM with complex forms and relaible delivery.",
     "role": "Fullstack Developer",
     "tech": ["React JS", "Express JS", "MongoDB"],
     "heroImage": "/assets/crsom/hero.png",
     "secondaryImage": "/assets/crsom/full.png",
-    "challenge": "Meridian's ops teams were drowning in spreadsheets. Decisions were being made on data that was 4+ hours old — a lifetime in logistics. When a truck breaks down or a route needs rerouting, you need to know now, not after a refresh cycle.",
-    "approach": "I rebuilt the data pipeline to push via WebSockets instead of polling, and redesigned the dashboard around the concept of alert-first: the system surfaces what needs attention before you think to look for it. D3 handles the heavy visualization; a custom Rust API handles stream aggregation at scale.",
+    "challenge": "The main challenge was building a registration system around the tournament’s specific rules, including limiting each game to a defined number of players while supporting multiple students and mentors. The system also had to handle dynamic fee calculations, image uploads, validation, and registration updates without making the process difficult to use.",
+    "approach": "With only 7 days to build, I focused on making the complex registration form reliable and intuitive. I implemented the tournament’s rules, dynamic player and mentor management, fee calculations, image compression, API integration, and comprehensive error handling to ensure invalid submissions and edge cases were handled gracefully.",
     "metrics": [
       {
-        "value": "97%",
-        "label": "Latency reduction",
-        "sub": "Hours → under 60s"
+        "value": "300+",
+        "label": "Students Registered",
+        "sub": "Through one digital platform"
       },
       {
-        "value": "200+",
-        "label": "Teams onboarded",
-        "sub": "In first 3 months"
+        "value": "1st",
+        "label": "Digital Solution for CRSOM",
+        "sub": "Replacing manual registration"
       },
       {
-        "value": "23%",
-        "label": "Fewer delivery errors",
-        "sub": "vs. prior quarter"
+        "value": "7 Days",
+        "label": "Development Time",
+        "sub": "From concept to deployment"
       }
     ],
     "process": [
       {
         "phase": "01",
         "title": "Discovery",
-        "desc": "Spent two weeks shadowing ops managers across three shifts. Mapped every moment where a decision had to be made and what data was (not) available."
+        "desc": "Worked with the BZU event organizers to understand the registration requirements, tournament rules, and how the website should look and function."
       },
       {
         "phase": "02",
-        "title": "Redesign",
-        "desc": "Rebuilt the information hierarchy around urgency, not recency. Introduced a triage panel that separates alerts from trends from history."
+        "title": "Design",
+        "desc": "Designed the interface around the organizers’ requirements, iterating frequently as they refined and changed the design throughout development. I also focused on making the complex, data-heavy registration form usable on mobile."
       },
       {
         "phase": "03",
-        "title": "Ship",
-        "desc": "Three months of weekly cycles. Feature flags let us test with a pilot cohort of 12 teams before rolling out to all 200+."
+        "title": "Implementation",
+        "desc": "Built the website and registration system with a secure REST API architecture, input validation, error handling, and responsive forms. I then integrated the remaining pages and functionality into a complete, production-ready website."
       }
     ],
-    "outcome": "Meridian's platform is now the centrepiece of their enterprise sales pitch. Decision latency dropped from hours to under 60 seconds. The dashboard architecture became the template for every feature they shipped the following year."
+    "outcome": "CRSOM was a huge success. More participants registered than in all previous years thanks to a single digital portal where everyone could gather information and register. The whole project was made on a time squeeze of just 7 days. I learned about working in high stress enviroments, making complex and dynamic forms that differed from the industries usual challenges and architectured a new solution for it"
   }
 ]

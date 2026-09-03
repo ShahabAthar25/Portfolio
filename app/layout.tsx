@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Portfolio of Shahab Athar an automation engineer and a web develeper",
 };
 
-export default function RootLayout({ children }: LayoutProps<" /">) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${jetbrainsMono.variable} h-full antialiased`}>
 
