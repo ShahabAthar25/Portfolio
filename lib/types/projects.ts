@@ -2,6 +2,7 @@ type Metric = { value: string; label: string; sub: string };
 type Phase = { phase: string; title: string; desc: string };
 
 export type Project = {
+  id: string;
   name: string;
   slug: string;
   category: string;
