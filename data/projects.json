@@ -47,6 +47,234 @@
         "desc": "Built the website and registration system with a secure REST API architecture, input validation, error handling, and responsive forms. I then integrated the remaining pages and functionality into a complete, production-ready website."
       }
     ],
-    "outcome": "CRSOM was a huge success. More participants registered than in all previous years thanks to a single digital portal where everyone could gather information and register. The whole project was made on a time squeeze of just 7 days. I learned about working in high stress enviroments, making complex and dynamic forms that differed from the industries usual challenges and architectured a new solution for it"
+    "outcome": "CRSOM was a huge success. More participants registered than in all previous years thanks to a single digital portal where everyone could gather information and register. The whole project was made on a time squeeze of just 7 days. I learned about working in high stress enviroments, making complex and dynamic forms that differed from the industries usual challenges and architectured a new solution for it",
+    "features": [
+      {
+        "key": "form",
+        "label": "Dynamic Complex Forms",
+        "desc": "Built dynamic registration forms with state-dependent fields, dynamic array rendering, and custom Joi validation message formatting.",
+        "highlight": true,
+        "detail": "Implemented conditional validation rules and dynamic array mappings for student and mentor entries where input requirements update dynamically based on user selections."
+      },
+      {
+        "key": "excel_export",
+        "label": "Automated Excel Data Export",
+        "desc": "Developed a dedicated backend route allowing external spreadsheets and admin tools to scrape or ingest live registration data automatically.",
+        "highlight": true,
+        "detail": "Built an automated data endpoint that parses and formats raw database entries into structured formats optimized for Excel ingestion, reporting, and admin workflows."
+      },
+      {
+        "key": "team_constraints",
+        "label": "Real-time Team Validation Engine",
+        "desc": "Enforced complex game logic and player capacities dynamically before form submission.",
+        "highlight": true,
+        "detail": "Created custom middleware validation to strictly enforce rules such as Game 4's exact 4 or 8 total player splits and Game 5's max team thresholds."
+      },
+      {
+        "key": "anti_duplication",
+        "label": "Multi-Entity Duplicate Protection",
+        "desc": "Integrated database uniqueness checks for multiple fields across nested document arrays.",
+        "highlight": false,
+        "detail": "Implemented asynchronous MongoDB queries checking for globally unique WhatsApp numbers, student CNICs, teacher contact numbers, and single-submission user IDs."
+      },
+      {
+        "key": "error_formatting",
+        "label": "Human-Readable Error Normalization",
+        "desc": "Transformed raw backend/Joi validation errors into user-friendly error strings.",
+        "highlight": false,
+        "detail": "Built a custom error parser that converts 0-indexed schema error messages into 1-indexed mentor/student labels with readable alternative options."
+      }
+    ],
+    "tags": ["Web Development"]
+  },
+  {
+    "id": "2",
+    "name": "Automated Lead Generation",
+    "slug": "automated-lead-generation",
+    "category": "Automation",
+    "year": "2026",
+    "duration": "2 weeks",
+    "desc": "Automated Reddit lead generation system using RSS feeds and adaptive API requests to minimize rate limits and enable lightweight background monitoring.",
+    "role": "Automation Engineer",
+    "tech": ["Python", "Async", "SQL", "Discord Webhooks"],
+    "heroImage": "/assets/automated-lead-gen/frontend.png",
+    "secondaryImage": "/assets/automated-lead-gen/frontend.png",
+    "challenge": "The main hurdle with building an automated lead generation system with reddit is its aapi. Reddit is notorious for rate limiting and banning people who are utilizing the api too much. Thus, a system needed to be created that is both highly efficient and light weight to run in background",
+    "approach": "My main focus with this project was to bypass the reddit API restrictions and rate limiting. Therefor, I used RSS feeds with an adaptive listener to send requests to the API in such a way that all the operational needs were met.",
+    "metrics": [
+      {
+        "value": "24/7",
+        "label": "Background Monitoring",
+        "sub": "Continuously tracks relevant Reddit activity"
+      },
+      {
+        "value": "< 1s",
+        "label": "Action Friction",
+        "sub": "One-click outreach from incoming lead notifications"
+      },
+      {
+        "value": "90%+",
+        "label": "API Request Reduction",
+        "sub": "Using RSS feeds and adaptive request scheduling"
+      }
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Discovery",
+        "desc": "The Reddit API had restrictions imposed on it around mid 2023, making me choose RSS feeds to avoid rate limiting. Tools to easily access the DB also were made, and the system followed a \"one click outreach\" philosophy."
+      },
+      {
+        "phase": "02",
+        "title": "Design",
+        "desc": "To bypass rate limiting, I adopted smart polling which automatically speeds up based on user activity. Both async and sync technologies were used to meet operational requirements. I also adopted a multi layered post filtering strategy. I used discord as a frontend for its convenience."
+      },
+      {
+        "phase": "03",
+        "title": "Implementation",
+        "desc": "Due to the restrictions, I used RSS feeds and smart polling. Each subreddit is polled on its designated time based on user activity. Async is used to avoid delays. Keyword match and AI made up the multi layered post filtering strategy. I also made passive post ingestion pipelines to generate valuable reports about the market."
+      }
+    ],
+    "outcome": "The project was a great learnign oppurtunity. I solved real world problems with constraints such as rate limiting. I made custom solutions to bypass the challenges and optimized the workflows for better execution. Right now, the system runs 24/7 with minimal overhead, is notifies me in imminently and I do outreach in one click. The system also preserves posts for me to gather inspirations to write self intros in subreddits like r/forhire.",
+    "features": [
+      {
+        "key": "smart_polling",
+        "label": "Adaptive Smart Polling",
+        "desc": "dynamic RSS polling intervals scale based on subreddit activity and rate limits",
+        "highlight": true,
+        "detail": "Exponential backoff and jitter algorithms dynamically adjust fetch frequencies across monitored subreddits, minimizing API overhead while guaranteeing real-time post ingestion."
+      },
+      {
+        "key": "llm_integration",
+        "label": "Strategy-Based LLM Integration",
+        "desc": "pluggable LLM provider strategy supporting Gemini, Groq, and local CPU models",
+        "highlight": true,
+        "detail": "Hexagonal architecture decoupling domain logic from inference APIs. Features strict JSON schema enforcement via Pydantic and zero-shot intent extraction for high-confidence lead scoring."
+      },
+      {
+        "key": "multi_layered_filtering",
+        "label": "Multi-Layered Filter Pipeline",
+        "desc": "cascading two-stage filter drops non-leads locally before hitting LLM endpoints",
+        "highlight": true,
+        "detail": "Combines fast regex pattern matching, post metadata rules (flairs/stickies), and ultra-lightweight local CPU classifiers (DeBERTa/Qwen) to eliminate 85%+ of non-hiring posts with zero API token cost."
+      },
+      {
+        "key": "passive_ingestion",
+        "label": "Passive Post Ingestion",
+        "desc": "non-blocking background worker stream continuously capturing incoming leads",
+        "highlight": false,
+        "detail": "Asynchronous RSS feed ingestion engine featuring post deduplication, title/body truncation guards, and automated state tracking to handle high-frequency feed updates smoothly."
+      },
+      {
+        "key": "db_debug_tools",
+        "label": "Database Debug & Access Suite",
+        "desc": "built-in developer tooling for real-time lead inspection, schema migrations, and queries",
+        "highlight": false,
+        "detail": "CLI and administrative utilities providing direct access to lead qualification states, raw LLM JSON outputs, database health metrics, and pipeline debugging logs."
+      },
+      {
+        "key": "circuit_breaker",
+        "label": "Resilient Fallback & Circuit Breaker",
+        "desc": "automatic API failover and rate-limit mitigation across multiple provider backends",
+        "highlight": false,
+        "detail": "Gracefully handles API rate limits, 400/404 errors, and network timeouts by automatically routing requests to backup LLM models or falling back to local heuristic classifiers."
+      }
+    ],
+    "tags": ["Web Development"]
+  },
+  {
+    "id": "3",
+    "name": "Dotfiles",
+    "slug": "dotfiles",
+    "category": "Linux",
+    "year": "2026",
+    "duration": "3 weeks",
+    "desc": "Automated Reddit lead generation system using RSS feeds and adaptive API requests to minimize rate limits and enable lightweight background monitoring.",
+    "role": "Ricing",
+    "tech": ["Python", "Async", "SQL", "Discord Webhooks"],
+    "heroImage": "/assets/automated-lead-gen/frontend.png",
+    "secondaryImage": "/assets/automated-lead-gen/frontend.png",
+    "challenge": "The main hurdle with building an automated lead generation system with reddit is its aapi. Reddit is notorious for rate limiting and banning people who are utilizing the api too much. Thus, a system needed to be created that is both highly efficient and light weight to run in background",
+    "approach": "My main focus with this project was to bypass the reddit API restrictions and rate limiting. Therefor, I used RSS feeds with an adaptive listener to send requests to the API in such a way that all the operational needs were met.",
+    "metrics": [
+      {
+        "value": "24/7",
+        "label": "Background Monitoring",
+        "sub": "Continuously tracks relevant Reddit activity"
+      },
+      {
+        "value": "< 1s",
+        "label": "Action Friction",
+        "sub": "One-click outreach from incoming lead notifications"
+      },
+      {
+        "value": "90%+",
+        "label": "API Request Reduction",
+        "sub": "Using RSS feeds and adaptive request scheduling"
+      }
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Discovery",
+        "desc": "The Reddit API had restrictions imposed on it around mid 2023, making me choose RSS feeds to avoid rate limiting. Tools to easily access the DB also were made, and the system followed a \"one click outreach\" philosophy."
+      },
+      {
+        "phase": "02",
+        "title": "Design",
+        "desc": "To bypass rate limiting, I adopted smart polling which automatically speeds up based on user activity. Both async and sync technologies were used to meet operational requirements. I also adopted a multi layered post filtering strategy. I used discord as a frontend for its convenience."
+      },
+      {
+        "phase": "03",
+        "title": "Implementation",
+        "desc": "Due to the restrictions, I used RSS feeds and smart polling. Each subreddit is polled on its designated time based on user activity. Async is used to avoid delays. Keyword match and AI made up the multi layered post filtering strategy. I also made passive post ingestion pipelines to generate valuable reports about the market."
+      }
+    ],
+    "outcome": "The project was a great learnign oppurtunity. I solved real world problems with constraints such as rate limiting. I made custom solutions to bypass the challenges and optimized the workflows for better execution. Right now, the system runs 24/7 with minimal overhead, is notifies me in imminently and I do outreach in one click. The system also preserves posts for me to gather inspirations to write self intros in subreddits like r/forhire.",
+    "features": [
+      {
+        "key": "smart_polling",
+        "label": "Adaptive Smart Polling",
+        "desc": "dynamic RSS polling intervals scale based on subreddit activity and rate limits",
+        "highlight": true,
+        "detail": "Exponential backoff and jitter algorithms dynamically adjust fetch frequencies across monitored subreddits, minimizing API overhead while guaranteeing real-time post ingestion."
+      },
+      {
+        "key": "llm_integration",
+        "label": "Strategy-Based LLM Integration",
+        "desc": "pluggable LLM provider strategy supporting Gemini, Groq, and local CPU models",
+        "highlight": true,
+        "detail": "Hexagonal architecture decoupling domain logic from inference APIs. Features strict JSON schema enforcement via Pydantic and zero-shot intent extraction for high-confidence lead scoring."
+      },
+      {
+        "key": "multi_layered_filtering",
+        "label": "Multi-Layered Filter Pipeline",
+        "desc": "cascading two-stage filter drops non-leads locally before hitting LLM endpoints",
+        "highlight": true,
+        "detail": "Combines fast regex pattern matching, post metadata rules (flairs/stickies), and ultra-lightweight local CPU classifiers (DeBERTa/Qwen) to eliminate 85%+ of non-hiring posts with zero API token cost."
+      },
+      {
+        "key": "passive_ingestion",
+        "label": "Passive Post Ingestion",
+        "desc": "non-blocking background worker stream continuously capturing incoming leads",
+        "highlight": false,
+        "detail": "Asynchronous RSS feed ingestion engine featuring post deduplication, title/body truncation guards, and automated state tracking to handle high-frequency feed updates smoothly."
+      },
+      {
+        "key": "db_debug_tools",
+        "label": "Database Debug & Access Suite",
+        "desc": "built-in developer tooling for real-time lead inspection, schema migrations, and queries",
+        "highlight": false,
+        "detail": "CLI and administrative utilities providing direct access to lead qualification states, raw LLM JSON outputs, database health metrics, and pipeline debugging logs."
+      },
+      {
+        "key": "circuit_breaker",
+        "label": "Resilient Fallback & Circuit Breaker",
+        "desc": "automatic API failover and rate-limit mitigation across multiple provider backends",
+        "highlight": false,
+        "detail": "Gracefully handles API rate limits, 400/404 errors, and network timeouts by automatically routing requests to backup LLM models or falling back to local heuristic classifiers."
+      }
+    ],
+    "tags": ["Web Development"]
   }
 ]

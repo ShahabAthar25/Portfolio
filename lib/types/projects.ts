@@ -1,5 +1,12 @@
 type Metric = { value: string; label: string; sub: string };
 type Phase = { phase: string; title: string; desc: string };
+type Feature = {
+  key: string;
+  label: string;
+  desc: string;
+  highlight?: boolean;
+  detail?: string;
+};
 
 export type Project = {
   id: string;
@@ -18,4 +25,6 @@ export type Project = {
   metrics: Metric[];
   process: Phase[];
   outcome: string;
+  features: Feature[];
+  tags: string[];
 };

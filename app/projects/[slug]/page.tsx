@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import projectsData from "@/data/projects.json";
 
 import { Project } from "@/lib/types/projects";
+
+import Features from "@/app/projects/[slug]/components/Features";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -34,23 +37,23 @@ export default async function ProjectPage({ params }: PageProps) {
       {/* Top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/96 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <button
+          <Link href="/#work"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group font-mono">
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
-            All Work
-          </button>
+            Home
+          </Link>
           <div className="flex items-center gap-4">
-            <button
+            <Link href={`/projects/${prevProject.slug}`}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 font-mono">
               <ArrowLeft className="w-3 h-3" />
               {prevProject.name}
-            </button>
+            </Link>
             <span className="text-border text-xs">·</span>
-            <button
+            <Link href={`/projects/${nextProject.slug}`}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 font-mono">
               {nextProject.name}
               <ArrowRight className="w-3 h-3" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -91,6 +94,9 @@ export default async function ProjectPage({ params }: PageProps) {
           ))}
         </div>
       </div>
+
+      {/* Features Section */}
+      <Features project={project} />
 
       {/* Challenge + Approach */}
       <div className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -179,27 +185,29 @@ export default async function ProjectPage({ params }: PageProps) {
       </div>
 
       {/* Next project */}
-      <div className="border-t border-border">
-        <button className="w-full group text-left">
-          <div className="max-w-6xl mx-auto px-6 py-16 flex items-center justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-mono">
-                Next Project
-              </p>
-              <h2 className="font-extrabold leading-tight group-hover:text-accent transition-colors duration-200" style={{
-                fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              }}>
-                {nextProject.name}
-              </h2>
-              <p className="text-sm text-muted-foreground mt-2 font-mono">
-                {nextProject.category} · {nextProject.year}
-              </p>
+      <Link href={`/projects/${nextProject.slug}`}>
+        <div className="border-t border-border">
+          <button className="w-full group text-left">
+            <div className="max-w-6xl mx-auto px-6 py-16 flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-mono">
+                  Next Project
+                </p>
+                <h2 className="font-extrabold leading-tight group-hover:text-accent transition-colors duration-200" style={{
+                  fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                }}>
+                  {nextProject.name}
+                </h2>
+                <p className="text-sm text-muted-foreground mt-2 font-mono">
+                  {nextProject.category} · {nextProject.year}
+                </p>
+              </div>
+              <ArrowRight
+                className="w-10 h-10 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" />
             </div>
-            <ArrowRight
-              className="w-10 h-10 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" />
-          </div>
-        </button>
-      </div>
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }
