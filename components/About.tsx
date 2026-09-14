@@ -12,10 +12,14 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div>
             <div className="aspect-[4/5] bg-card border border-border overflow-hidden relative mb-8">
-              {/* Placeholder Image */}
-              <Image src="https://images.unsplash.com/photo-1564627488683-453be0de2aad?w=700&h=875&fit=crop&auto=format"
-                fill alt="Developer at work" className="w-full h-full object-cover grayscale opacity-80" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+              <Image src="/assets/about.jpeg" fill alt="Developer at work"
+                className="w-full h-full object-cover object-[100%_100%] opacity-80" />
+
+              <div
+                className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.7)_100%)]" />
+
+              <div className="absolute inset-0 bg-linear-to-t from-background/70 via-transparent to-transparent" />
+
               <div className="absolute bottom-5 left-5">
                 <span className="text-xs text-muted-foreground">
                   Multan, 2024

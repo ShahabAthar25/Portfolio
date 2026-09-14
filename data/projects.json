@@ -189,92 +189,92 @@
     "category": "Linux",
     "year": "2026",
     "duration": "3 weeks",
-    "desc": "Automated Reddit lead generation system using RSS feeds and adaptive API requests to minimize rate limits and enable lightweight background monitoring.",
-    "role": "Ricing",
-    "tech": ["Python", "Async", "SQL", "Discord Webhooks"],
-    "heroImage": "/assets/automated-lead-gen/frontend.png",
-    "secondaryImage": "/assets/automated-lead-gen/frontend.png",
-    "challenge": "The main hurdle with building an automated lead generation system with reddit is its aapi. Reddit is notorious for rate limiting and banning people who are utilizing the api too much. Thus, a system needed to be created that is both highly efficient and light weight to run in background",
-    "approach": "My main focus with this project was to bypass the reddit API restrictions and rate limiting. Therefor, I used RSS feeds with an adaptive listener to send requests to the API in such a way that all the operational needs were met.",
+    "role": "Ricing & Systems Config",
+    "tech": [
+      "Linux",
+      "Arch Linux",
+      "Hyprland",
+      "Qtile",
+      "Rofi",
+      "Waybar",
+      "Bash"
+    ],
+    "heroImage": "/assets/dotfiles/home.png",
+    "secondaryImage": "/assets/dotfiles/nvim.png",
+    "challenge": "Balancing cutting-edge Wayland visuals with rock-solid X11 reliability for productivity. The primary hurdle was building a cohesive, minimal design system across both Hyprland and Qtile that shared configurations seamlessly while maintaining low system overhead, fast startup times, and quick keyboard-driven workflows.",
+    "approach": "I designed a modular dotfile architecture built around Arch Linux, featuring Hyprland as my primary Wayland compositor and Qtile for X11 fallback. I created unified custom Rofi launcher scripts, an integrated notification center, and custom Waybar/Polybar modules to streamline window management and daily dev workflows.",
     "metrics": [
       {
-        "value": "24/7",
-        "label": "Background Monitoring",
-        "sub": "Continuously tracks relevant Reddit activity"
+        "value": "< 0.2s",
+        "label": "App Launch Latency",
+        "sub": "Optimized Rofi & custom Bash scripts"
       },
       {
-        "value": "< 1s",
-        "label": "Action Friction",
-        "sub": "One-click outreach from incoming lead notifications"
+        "value": "2 Workspaces",
+        "label": "Dual Ecosystems",
+        "sub": "Wayland (Hyprland) & X11 (Qtile) parity"
       },
       {
-        "value": "90%+",
-        "label": "API Request Reduction",
-        "sub": "Using RSS feeds and adaptive request scheduling"
+        "value": "100%",
+        "label": "Keyboard Driven",
+        "sub": "Custom keybindings for zero-mouse dependency"
       }
     ],
     "process": [
       {
         "phase": "01",
-        "title": "Discovery",
-        "desc": "The Reddit API had restrictions imposed on it around mid 2023, making me choose RSS feeds to avoid rate limiting. Tools to easily access the DB also were made, and the system followed a \"one click outreach\" philosophy."
+        "title": "Core Setup & Base OS",
+        "desc": "Stripped down an Arch Linux installation to the bare essentials. Mapped out workspace workflows, directory structures, and shared configuration files to keep the setup easily reproducible via stow/git."
       },
       {
         "phase": "02",
-        "title": "Design",
-        "desc": "To bypass rate limiting, I adopted smart polling which automatically speeds up based on user activity. Both async and sync technologies were used to meet operational requirements. I also adopted a multi layered post filtering strategy. I used discord as a frontend for its convenience."
+        "title": "WM Architecture & Aesthetics",
+        "desc": "Configured Hyprland with dynamic tiling, smooth animations, and Waybar. Set up Qtile as an X11 fallback, synchronizing themes, color palettes, fonts, and window rules across both desktop environments."
       },
       {
         "phase": "03",
-        "title": "Implementation",
-        "desc": "Due to the restrictions, I used RSS feeds and smart polling. Each subreddit is polled on its designated time based on user activity. Async is used to avoid delays. Keyword match and AI made up the multi layered post filtering strategy. I also made passive post ingestion pipelines to generate valuable reports about the market."
+        "title": "Custom Scripts & Automation",
+        "desc": "Wrote custom Bash and Python utilities for Rofi menus (app launcher, power menu, clipboard manager), notification daemon controls, and workspace status widgets to maximize daily development efficiency."
       }
     ],
-    "outcome": "The project was a great learnign oppurtunity. I solved real world problems with constraints such as rate limiting. I made custom solutions to bypass the challenges and optimized the workflows for better execution. Right now, the system runs 24/7 with minimal overhead, is notifies me in imminently and I do outreach in one click. The system also preserves posts for me to gather inspirations to write self intros in subreddits like r/forhire.",
+    "outcome": "Created a lightweight, highly responsive, and aesthetically pleasing Linux environment tailored for extreme productivity. The system boots in seconds, runs with minimal RAM usage, and features fully unified keybindings and styling between Wayland and X11 sessions.",
     "features": [
       {
-        "key": "smart_polling",
-        "label": "Adaptive Smart Polling",
-        "desc": "dynamic RSS polling intervals scale based on subreddit activity and rate limits",
+        "key": "dual_wm_setup",
+        "label": "Dual Compositor Architecture",
+        "desc": "Hyprland (Wayland) primary with Qtile (X11) fallback for maximum compatibility",
         "highlight": true,
-        "detail": "Exponential backoff and jitter algorithms dynamically adjust fetch frequencies across monitored subreddits, minimizing API overhead while guaranteeing real-time post ingestion."
+        "detail": "Engineered a flexible desktop framework using Hyprland for modern animations/Wayland features while maintaining a fully synced Qtile setup on X11 for legacy screen sharing and app support."
       },
       {
-        "key": "llm_integration",
-        "label": "Strategy-Based LLM Integration",
-        "desc": "pluggable LLM provider strategy supporting Gemini, Groq, and local CPU models",
+        "key": "custom_rofi_suite",
+        "label": "Custom Rofi Launchers & Scripts",
+        "desc": "Extensible key-driven launcher for apps, power controls, and window navigation",
         "highlight": true,
-        "detail": "Hexagonal architecture decoupling domain logic from inference APIs. Features strict JSON schema enforcement via Pydantic and zero-shot intent extraction for high-confidence lead scoring."
+        "detail": "Tailored Rofi themes and scripts to serve as an all-in-one command palette, handling system power menus, audio output toggling, clipboard history, and rapid app launching."
       },
       {
-        "key": "multi_layered_filtering",
-        "label": "Multi-Layered Filter Pipeline",
-        "desc": "cascading two-stage filter drops non-leads locally before hitting LLM endpoints",
+        "key": "unified_status_bar",
+        "label": "Dynamic Waybar & Notification Panel",
+        "desc": "Real-time system monitoring, workspace indicators, and customized alert center",
         "highlight": true,
-        "detail": "Combines fast regex pattern matching, post metadata rules (flairs/stickies), and ultra-lightweight local CPU classifiers (DeBERTa/Qwen) to eliminate 85%+ of non-hiring posts with zero API token cost."
+        "detail": "Configured Waybar with custom CSS modules for CPU/RAM telemetry, active workspace tracking, and media controls, paired with a styled notification panel for seamless alerts."
       },
       {
-        "key": "passive_ingestion",
-        "label": "Passive Post Ingestion",
-        "desc": "non-blocking background worker stream continuously capturing incoming leads",
+        "key": "productivity_tiling",
+        "label": "Productivity-Focused Window Rules",
+        "desc": "Automated workspace placement, smart gaps, and floating window overrides",
         "highlight": false,
-        "detail": "Asynchronous RSS feed ingestion engine featuring post deduplication, title/body truncation guards, and automated state tracking to handle high-frequency feed updates smoothly."
+        "detail": "Defined strict window rules across both WMs to automatically route development tools, terminals, browsers, and communication apps to designated workspaces on startup."
       },
       {
-        "key": "db_debug_tools",
-        "label": "Database Debug & Access Suite",
-        "desc": "built-in developer tooling for real-time lead inspection, schema migrations, and queries",
+        "key": "dotfile_management",
+        "label": "Modular Dotfile Versioning",
+        "desc": "Version-controlled setup structured for rapid deployment across new machines",
         "highlight": false,
-        "detail": "CLI and administrative utilities providing direct access to lead qualification states, raw LLM JSON outputs, database health metrics, and pipeline debugging logs."
-      },
-      {
-        "key": "circuit_breaker",
-        "label": "Resilient Fallback & Circuit Breaker",
-        "desc": "automatic API failover and rate-limit mitigation across multiple provider backends",
-        "highlight": false,
-        "detail": "Gracefully handles API rate limits, 400/404 errors, and network timeouts by automatically routing requests to backup LLM models or falling back to local heuristic classifiers."
+        "detail": "Organized configuration files into modular directories managed via Git and GNU Stow, allowing single-command installation and seamless updates."
       }
     ],
-    "tags": ["Web Development"]
+    "tags": ["Linux"]
   }
 ]
