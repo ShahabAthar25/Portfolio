@@ -14,10 +14,10 @@ export default function ProjectsGrid({
   if (n === 0) {
     return (
       <div className="max-w-6xl mx-auto px-6 py-28 flex flex-col items-center gap-4">
-        <span className="text-4xl font-extrabold text-muted-foreground/20 font-display">
+        <span className="text-4xl font-extrabold text-foreground/20 font-display">
           —
         </span>
-        <p className="text-sm text-muted-foreground font-mono">
+        <p className="text-sm text-foreground font-mono">
           No projects in this category yet.
         </p>
       </div>
@@ -25,7 +25,7 @@ export default function ProjectsGrid({
   }
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 ${className}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${className}`}>
       {projects.map((project, index) => {
         const positionInPattern = index % 4;
 

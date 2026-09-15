@@ -21,9 +21,7 @@ export default function About() {
               <div className="absolute inset-0 bg-linear-to-t from-background/70 via-transparent to-transparent" />
 
               <div className="absolute bottom-5 left-5">
-                <span className="text-xs text-muted-foreground">
-                  Multan, 2024
-                </span>
+                <span className="text-xs text-foreground">Multan, 2024</span>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -37,9 +35,7 @@ export default function About() {
                   <div className="text-3xl font-extrabold font-display" style={{ color: "var(--accent)" }}>
                     {value}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    {label}
-                  </div>
+                  <div className="text-xs text-foreground mt-1">{label}</div>
                 </div>
               ))}
             </div>
@@ -51,7 +47,7 @@ export default function About() {
               A developer who gives a damn about{" "}
               <span style={{ color: "var(--accent)" }}>UX.</span>
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-[0.9375rem]">
+            <div className="space-y-4 text-foreground leading-relaxed text-[0.9375rem]">
               <p>
                 I&apos;m Shahab Athar. Fullstack developer, and an automation
                 engineer, always the person in the room asking &ldquo;but how
@@ -71,23 +67,23 @@ export default function About() {
               </p>
             </div>
             <div className="mt-12 pt-8 border-t border-border">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-5">
+              <p className="text-xs uppercase tracking-widest text-foreground mb-5">
                 Tools & Technologies
               </p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <span key={skill}
-                    className="text-sm text-muted-foreground border border-border px-3 py-1.5 transition-colors duration-150 cursor-default hover:border-accent hover:text-accent">
+                    className="text-sm text-foreground border border-border px-3 py-1.5 transition-colors duration-150 cursor-default hover:border-accent hover:text-accent">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-border">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-5">
+              <p className="text-xs uppercase tracking-widest text-foreground mb-5">
                 Currently
               </p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-foreground">
                 {[
                   "building an automated lead generation system",
                   "architecting a a risk-parity forecasting engine to fix my portfolio",
