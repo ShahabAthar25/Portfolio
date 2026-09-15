@@ -1,3 +1,4 @@
+type Images = { image: string; caption?: string };
 type Metric = { value: string; label: string; sub: string };
 type Phase = { phase: string; title: string; desc: string };
 type Feature = {
@@ -19,7 +20,8 @@ export type Project = {
   role: string;
   duration: string;
   heroImage: string;
-  secondaryImage: string;
+  images: Images[];
+  // secondaryImage: string;
   challenge: string;
   approach: string;
   metrics: Metric[];
