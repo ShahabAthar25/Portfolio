@@ -34,7 +34,7 @@ export default function ProjectsGrid({
         const isFullWidth = positionInPattern === 0 || positionInPattern === 3;
 
         return (
-          <div key={project.id || index} className={isFullWidth ? "md:col-span-2" : ""}>
+          <div key={index} className={isFullWidth ? "md:col-span-2" : ""}>
             <ProjectCard project={project} size={isHero ? "hero" : "normal"} />
           </div>
         );
