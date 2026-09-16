@@ -1,5 +1,8 @@
 import ProjectsGrid from "@/components/ProjectsGrid";
+
 import projects from "@/data/projects.json";
+
+import { Project } from "@/lib/types/projects";
 
 export default function Projects() {
   return (
@@ -8,16 +11,13 @@ export default function Projects() {
         <p className="text-xs uppercase tracking-widest text-foreground mb-5 font-mono">
           Portfolio · 2023–2024
         </p>
-        <h1
-          className="font-extrabold leading-[0.88] tracking-tight font-display"
-          style={{
-            fontSize: "clamp(3.5rem, 8vw, 7rem)",
-          }}
-        >
+        <h1 className="font-extrabold leading-[0.88] tracking-tight font-display" style={{
+          fontSize: "clamp(3.5rem, 8vw, 7rem)",
+        }}>
           Selected Work
         </h1>
       </div>
-      <ProjectsGrid projects={projects} className="mt-10" />
+      <ProjectsGrid projects={projects as Project[]} className="mt-10" />
     </div>
   );
 }
