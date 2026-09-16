@@ -155,7 +155,7 @@ export default async function ProjectPage({ params }: PageProps) {
                   <span className="text-xs text-foreground">{phase.phase}</span>
                   <h3 className="text-lg font-bold font-mono">{phase.title}</h3>
                 </div>
-                <p className="text-sm text-foreground leading-relaxed font-mono">
+                <p className="text-sm text-foreground leading-relaxed">
                   {phase.desc}
                 </p>
               </div>
