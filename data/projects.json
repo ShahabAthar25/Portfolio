@@ -9,7 +9,24 @@
     "role": "Automation Engineer",
     "tech": ["Python", "Async", "SQL", "Discord Webhooks"],
     "heroImage": "/assets/automated-lead-gen/frontend.png",
-    "secondaryImage": "/assets/automated-lead-gen/frontend.png",
+    "images": [
+      {
+        "image": "/assets/automated-lead-gen/frontend.png",
+        "caption": "Frontend Dashboard View"
+      },
+      {
+        "image": "/assets/automated-lead-gen/running.png",
+        "caption": "Background Process Running"
+      },
+      {
+        "image": "/assets/automated-lead-gen/config.png",
+        "caption": "System Configuration"
+      },
+      {
+        "image": "/assets/automated-lead-gen/tools.png",
+        "caption": "Database Debug & Developer Tools"
+      }
+    ],
     "challenge": "The main hurdle with building an automated lead generation system with reddit is its aapi. Reddit is notorious for rate limiting and banning people who are utilizing the api too much. Thus, a system needed to be created that is both highly efficient and light weight to run in background",
     "approach": "My main focus with this project was to bypass the reddit API restrictions and rate limiting. Therefor, I used RSS feeds with an adaptive listener to send requests to the API in such a way that all the operational needs were met.",
     "metrics": [
@@ -103,7 +120,18 @@
     "role": "Fullstack Developer",
     "tech": ["React JS", "Express JS", "MongoDB"],
     "heroImage": "/assets/crsom/hero.png",
-    "secondaryImage": "/assets/crsom/full.png",
+    "images": [
+      { "image": "/assets/crsom/hero.png", "caption": "Hero Landing Page" },
+      { "image": "/assets/crsom/full.png", "caption": "Full Page Layout" },
+      {
+        "image": "/assets/crsom/form.png",
+        "caption": "Registration Form Interface"
+      },
+      {
+        "image": "/assets/crsom/form-bottom.png",
+        "caption": "Form Validation & Submission Section"
+      }
+    ],
     "challenge": "The main challenge was building a registration system around the tournament’s specific rules, including limiting each game to a defined number of players while supporting multiple students and mentors. The system also had to handle dynamic fee calculations, image uploads, validation, and registration updates without making the process difficult to use.",
     "approach": "With only 7 days to build, I focused on making the complex registration form reliable and intuitive. I implemented the tournament’s rules, dynamic player and mentor management, fee calculations, image compression, API integration, and comprehensive error handling to ensure invalid submissions and edge cases were handled gracefully.",
     "metrics": [
@@ -198,7 +226,32 @@
       "REST API"
     ],
     "heroImage": "/assets/twitter-api-clone/hero.png",
-    "secondaryImage": "/assets/dotfiles/tweet-list.png",
+    "images": [
+      {
+        "image": "/assets/twitter-api-clone/hero.png",
+        "caption": "API Architecture Overview"
+      },
+      {
+        "image": "/assets/twitter-api-clone/tweet-list.png",
+        "caption": "Tweet Feed API Endpoint Response"
+      },
+      {
+        "image": "/assets/twitter-api-clone/tweet-view-admin.png",
+        "caption": "Tweet Detail & Admin Telemetry"
+      },
+      {
+        "image": "/assets/twitter-api-clone/login-success.png",
+        "caption": "Auth Token & Session Flow"
+      },
+      {
+        "image": "/assets/twitter-api-clone/Register.png",
+        "caption": "User Registration Endpoint"
+      },
+      {
+        "image": "/assets/twitter-api-clone/admin.png",
+        "caption": "Django Admin Interface"
+      }
+    ],
     "challenge": "I wanted to create something more than a normal clone. This project was not more so about building an API but about architecturing it. It places emphasis on distributed, async, and backgound processes. It is optimized for speed and includes caching. The API had to be massive and thus features more than 36 API endpoints.",
     "approach": "The approch of this project was based on speed and efficiency. I used Django with Celery, Redis and Caching to meet operational requirements.",
     "metrics": [
@@ -273,7 +326,7 @@
         "detail": "Organized configuration files into modular directories managed via Git and GNU Stow, allowing single-command installation and seamless updates."
       }
     ],
-    "tags": ["Linux"]
+    "tags": ["Web Development"]
   },
   {
     "name": "Dotfiles",
@@ -293,7 +346,28 @@
       "Bash"
     ],
     "heroImage": "/assets/dotfiles/home.png",
-    "secondaryImage": "/assets/dotfiles/nvim.png",
+    "images": [
+      {
+        "image": "/assets/dotfiles/home.png",
+        "caption": "Desktop Home Workspace Setup"
+      },
+      {
+        "image": "/assets/dotfiles/nvim.png",
+        "caption": "Neovim IDE Configuration"
+      },
+      {
+        "image": "/assets/dotfiles/launcher.png",
+        "caption": "Custom Rofi App Launcher"
+      },
+      {
+        "image": "/assets/dotfiles/browser.png",
+        "caption": "Styled Web Browser Integration"
+      },
+      {
+        "image": "/assets/dotfiles/file_editor.png",
+        "caption": "Terminal File Manager"
+      }
+    ],
     "challenge": "Balancing cutting-edge Wayland visuals with rock-solid X11 reliability for productivity. The primary hurdle was building a cohesive, minimal design system across both Hyprland and Qtile that shared configurations seamlessly while maintaining low system overhead, fast startup times, and quick keyboard-driven workflows.",
     "approach": "I designed a modular dotfile architecture built around Arch Linux, featuring Hyprland as my primary Wayland compositor and Qtile for X11 fallback. I created unified custom Rofi launcher scripts, an integrated notification center, and custom Waybar/Polybar modules to streamline window management and daily dev workflows.",
     "metrics": [

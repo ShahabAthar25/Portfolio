@@ -10,7 +10,6 @@ type Feature = {
 };
 
 export type Project = {
-  id: string;
   name: string;
   slug: string;
   category: string;
@@ -21,7 +20,6 @@ export type Project = {
   duration: string;
   heroImage: string;
   images: Images[];
-  // secondaryImage: string;
   challenge: string;
   approach: string;
   metrics: Metric[];
