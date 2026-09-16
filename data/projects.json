@@ -243,37 +243,37 @@
     "slides": [
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/hero.png",
+        "src": "/assets/twitter-rest-api/hero.png",
         "tag": "Architecture",
         "caption": "API Architecture Overview"
       },
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/tweet-list.png",
+        "src": "/assets/twitter-rest-api/tweet-list.png",
         "tag": "Endpoints",
         "caption": "Tweet Feed API Endpoint Response"
       },
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/tweet-view-admin.png",
+        "src": "/assets/twitter-rest-api/tweet-view-admin.png",
         "tag": "Telemetry",
         "caption": "Tweet Detail & Admin Telemetry"
       },
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/login-success.png",
+        "src": "/assets/twitter-rest-api/login-success.png",
         "tag": "Auth",
         "caption": "Auth Token & Session Flow"
       },
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/Register.png",
+        "src": "/assets/twitter-rest-api/Register.png",
         "tag": "Auth",
         "caption": "User Registration Endpoint"
       },
       {
         "kind": "image",
-        "src": "/assets/twitter-api-clone/admin.png",
+        "src": "/assets/twitter-rest-api/admin.png",
         "tag": "Admin",
         "caption": "Django Admin Interface"
       }
