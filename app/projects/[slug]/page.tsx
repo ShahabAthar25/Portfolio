@@ -116,8 +116,10 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Features Section */}
-      <Features project={project} />
+      {/* Images */}
+      <div className="px-6 py-20">
+        <ProjectCarousel project={project} />
+      </div>
 
       {/* Metrics */}
       <div className="border-y border-border bg-card">
@@ -137,10 +139,8 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Images */}
-      <div className="px-6 py-20">
-        <ProjectCarousel project={project} />
-      </div>
+      {/* Features Section */}
+      <Features project={project} />
 
       {/* Process */}
       <div className="border-t border-border">

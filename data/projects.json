@@ -9,21 +9,29 @@
     "role": "Automation Engineer",
     "tech": ["Python", "Async", "SQL", "Discord Webhooks"],
     "heroImage": "/assets/automated-lead-gen/frontend.png",
-    "images": [
+    "slides": [
       {
-        "image": "/assets/automated-lead-gen/frontend.png",
+        "kind": "image",
+        "src": "/assets/automated-lead-gen/frontend.png",
+        "tag": "Dashboard",
         "caption": "Frontend Dashboard View"
       },
       {
-        "image": "/assets/automated-lead-gen/running.png",
+        "kind": "image",
+        "src": "/assets/automated-lead-gen/running.png",
+        "tag": "Process",
         "caption": "Background Process Running"
       },
       {
-        "image": "/assets/automated-lead-gen/config.png",
+        "kind": "image",
+        "src": "/assets/automated-lead-gen/config.png",
+        "tag": "Settings",
         "caption": "System Configuration"
       },
       {
-        "image": "/assets/automated-lead-gen/tools.png",
+        "kind": "image",
+        "src": "/assets/automated-lead-gen/tools.png",
+        "tag": "DevTools",
         "caption": "Database Debug & Developer Tools"
       }
     ],
@@ -120,15 +128,29 @@
     "role": "Fullstack Developer",
     "tech": ["React JS", "Express JS", "MongoDB"],
     "heroImage": "/assets/crsom/hero.png",
-    "images": [
-      { "image": "/assets/crsom/hero.png", "caption": "Hero Landing Page" },
-      { "image": "/assets/crsom/full.png", "caption": "Full Page Layout" },
+    "slides": [
       {
-        "image": "/assets/crsom/form.png",
+        "kind": "image",
+        "src": "/assets/crsom/hero.png",
+        "tag": "Landing",
+        "caption": "Hero Landing Page"
+      },
+      {
+        "kind": "image",
+        "src": "/assets/crsom/full.png",
+        "tag": "Overview",
+        "caption": "Full Page Layout"
+      },
+      {
+        "kind": "image",
+        "src": "/assets/crsom/form.png",
+        "tag": "Interface",
         "caption": "Registration Form Interface"
       },
       {
-        "image": "/assets/crsom/form-bottom.png",
+        "kind": "image",
+        "src": "/assets/crsom/form-bottom.png",
+        "tag": "Validation",
         "caption": "Form Validation & Submission Section"
       }
     ],
@@ -209,51 +231,55 @@
     "tags": ["Web Development"]
   },
   {
-    "name": "Twitter Rest API Clone",
-    "slug": "twitter-rest-api-clone",
+    "name": "Twitter REST API",
+    "slug": "twitter-rest-api",
     "category": "Backend Development",
     "year": "2026",
-    "duration": "2024 - PRESENT",
-    "desc": "",
+    "duration": "3 weeks",
+    "desc": "Twitter-like REST API focused on scalable backend architecture, asynchronous background processing, and fast data access through Redis caching.",
     "role": "Backend Developer",
-    "tech": [
-      "Python",
-      "Django",
-      "Celery",
-      "Redis",
-      "Postgresql",
-      "Caching",
-      "REST API"
-    ],
-    "heroImage": "/assets/twitter-api-clone/hero.png",
-    "images": [
+    "tech": ["Python", "Django", "REST API", "Celery", "Redis", "PostgreSQL"],
+    "heroImage": "/assets/twitter-rest-api/hero.png",
+    "slides": [
       {
-        "image": "/assets/twitter-api-clone/hero.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/hero.png",
+        "tag": "Architecture",
         "caption": "API Architecture Overview"
       },
       {
-        "image": "/assets/twitter-api-clone/tweet-list.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/tweet-list.png",
+        "tag": "Endpoints",
         "caption": "Tweet Feed API Endpoint Response"
       },
       {
-        "image": "/assets/twitter-api-clone/tweet-view-admin.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/tweet-view-admin.png",
+        "tag": "Telemetry",
         "caption": "Tweet Detail & Admin Telemetry"
       },
       {
-        "image": "/assets/twitter-api-clone/login-success.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/login-success.png",
+        "tag": "Auth",
         "caption": "Auth Token & Session Flow"
       },
       {
-        "image": "/assets/twitter-api-clone/Register.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/Register.png",
+        "tag": "Auth",
         "caption": "User Registration Endpoint"
       },
       {
-        "image": "/assets/twitter-api-clone/admin.png",
+        "kind": "image",
+        "src": "/assets/twitter-api-clone/admin.png",
+        "tag": "Admin",
         "caption": "Django Admin Interface"
       }
     ],
-    "challenge": "I wanted to create something more than a normal clone. This project was not more so about building an API but about architecturing it. It places emphasis on distributed, async, and backgound processes. It is optimized for speed and includes caching. The API had to be massive and thus features more than 36 API endpoints.",
-    "approach": "The approch of this project was based on speed and efficiency. I used Django with Celery, Redis and Caching to meet operational requirements.",
+    "challenge": "I wanted to create something more than a basic Twitter clone. The main challenge was designing the architecture behind a large REST API while keeping it fast and responsive. It needed to handle frequent operations such as fetching tweets and view counts without repeatedly hitting the database. The system also needed background processing for tasks that did not need to block API requests.",
+    "approach": "My main focus with this project was the backend architecture rather than simply adding endpoints. I used Redis as a caching layer so frequently requested data could be returned without querying PostgreSQL every time. Celery handles background processes such as syncing view counts from the cache back into the database, keeping those operations away from the main request cycle.",
     "metrics": [
       {
         "value": "100%",
@@ -274,174 +300,199 @@
     "process": [
       {
         "phase": "01",
-        "title": "Core Setup & Base OS",
-        "desc": "Stripped down an Arch Linux installation to the bare essentials. Mapped out workspace workflows, directory structures, and shared configuration files to keep the setup easily reproducible via stow/git."
+        "title": "Architecture",
+        "desc": "I first broke the application into its main resources: users, tweets, replies, bookmarks, and lists. Each resource needed its own CRUD operations where appropriate, while authentication was kept separate. The goal was to make the API large without making the architecture difficult to maintain."
       },
       {
         "phase": "02",
-        "title": "WM Architecture & Aesthetics",
-        "desc": "Configured Hyprland with dynamic tiling, smooth animations, and Waybar. Set up Qtile as an X11 fallback, synchronizing themes, color palettes, fonts, and window rules across both desktop environments."
+        "title": "Performance",
+        "desc": "A Twitter-like application constantly reads data, so hitting PostgreSQL for every request would create unnecessary overhead. I added Redis as a caching layer and designed the API to return cached data when available. Celery was then introduced for operations that could safely happen in the background."
       },
       {
         "phase": "03",
-        "title": "Custom Scripts & Automation",
-        "desc": "Wrote custom Bash and Python utilities for Rofi menus (app launcher, power menu, clipboard manager), notification daemon controls, and workspace status widgets to maximize daily development efficiency."
+        "title": "Implementation",
+        "desc": "I implemented more than 36 endpoints across the main API resources, backed by PostgreSQL. Redis handles frequently accessed data while Celery processes background jobs such as syncing cached view counts into the database. The result is an API where the request cycle stays focused on returning a response instead of doing every operation synchronously."
       }
     ],
-    "outcome": "Created a lightweight, highly responsive, and aesthetically pleasing Linux environment tailored for extreme productivity. The system boots in seconds, runs with minimal RAM usage, and features fully unified keybindings and styling between Wayland and X11 sessions.",
+    "outcome": "This project taught me how much of backend development is really about architecture. Building the endpoints was only one part of it. I had to think about where data should live, when it should be cached, and which operations should happen outside the request cycle. The final API has more than 36 endpoints, uses Redis for fast reads, PostgreSQL as the primary database, and Celery for background processing.",
     "features": [
       {
-        "key": "dual_wm_setup",
-        "label": "Dual Compositor Architecture",
-        "desc": "Hyprland (Wayland) primary with Qtile (X11) fallback for maximum compatibility",
+        "key": "background_processing",
+        "label": "Celery Background Processing",
+        "desc": "background workers handle operations that do not need to block API responses",
         "highlight": true,
-        "detail": "Engineered a flexible desktop framework using Hyprland for modern animations/Wayland features while maintaining a fully synced Qtile setup on X11 for legacy screen sharing and app support."
+        "detail": "Celery workers process asynchronous tasks such as syncing tweet view counts from Redis back into PostgreSQL, keeping slower operations outside the main request cycle."
       },
       {
-        "key": "custom_rofi_suite",
-        "label": "Custom Rofi Launchers & Scripts",
-        "desc": "Extensible key-driven launcher for apps, power controls, and window navigation",
+        "key": "redis_cache",
+        "label": "Built-In Redis Caching",
+        "desc": "cached results are returned directly when available",
         "highlight": true,
-        "detail": "Tailored Rofi themes and scripts to serve as an all-in-one command palette, handling system power menus, audio output toggling, clipboard history, and rapid app launching."
+        "detail": "The API checks Redis before querying PostgreSQL for cacheable data. This reduces repeated database reads and keeps frequently accessed resources fast."
       },
       {
-        "key": "unified_status_bar",
-        "label": "Dynamic Waybar & Notification Panel",
-        "desc": "Real-time system monitoring, workspace indicators, and customized alert center",
+        "key": "api_architecture",
+        "label": "Resource-Based REST API",
+        "desc": "36+ endpoints organized around the application's core resources",
         "highlight": true,
-        "detail": "Configured Waybar with custom CSS modules for CPU/RAM telemetry, active workspace tracking, and media controls, paired with a styled notification panel for seamless alerts."
+        "detail": "The API is structured around authentication, users, tweets, replies, bookmarks, and lists, with CRUD operations where they make sense for each resource."
       },
       {
-        "key": "productivity_tiling",
-        "label": "Productivity-Focused Window Rules",
-        "desc": "Automated workspace placement, smart gaps, and floating window overrides",
+        "key": "tweet_system",
+        "label": "Tweet & Reply System",
+        "desc": "complete API support for creating and managing tweets and replies",
         "highlight": false,
-        "detail": "Defined strict window rules across both WMs to automatically route development tools, terminals, browsers, and communication apps to designated workspaces on startup."
+        "detail": "Tweet and reply resources support the operations required to create, retrieve, update, and delete content while keeping their relationships manageable through the API."
       },
       {
-        "key": "dotfile_management",
-        "label": "Modular Dotfile Versioning",
-        "desc": "Version-controlled setup structured for rapid deployment across new machines",
+        "key": "bookmarks",
+        "label": "Bookmark Management",
+        "desc": "lightweight bookmark creation and removal without unnecessary CRUD operations",
         "highlight": false,
-        "detail": "Organized configuration files into modular directories managed via Git and GNU Stow, allowing single-command installation and seamless updates."
+        "detail": "Bookmarks use a focused resource design where only the operations that make sense for the feature are exposed instead of forcing a generic CRUD structure."
+      },
+      {
+        "key": "lists",
+        "label": "List Management",
+        "desc": "full CRUD support for user-created Twitter-style lists",
+        "highlight": false,
+        "detail": "Users can create, retrieve, update, and delete lists through dedicated API endpoints, with the architecture leaving room for managing list membership separately."
       }
     ],
-    "tags": ["Web Development"]
+    "tags": ["Backend", "REST API"]
   },
   {
     "name": "Dotfiles",
     "slug": "dotfiles",
     "category": "Linux",
     "year": "2026",
-    "duration": "3 weeks",
-    "desc": "Arch linux custom DE config files. It includes setup for both qtile and hyperland. It has notification panel, rofi, custom rofi themes, Waybar, and so much more.",
-    "role": "Ricing & Systems Config",
+    "duration": "Ongoing",
+    "desc": "Modular Arch Linux configuration built around GNU tools, custom window management, a tailored development environment, and lightweight system automation.",
+    "role": "Linux System Architect",
     "tech": [
-      "Linux",
       "Arch Linux",
+      "GNU",
       "Hyprland",
-      "Qtile",
-      "Rofi",
-      "Waybar",
-      "Bash"
+      "Wayland",
+      "Neovim",
+      "Bash",
+      "Tmux",
+      "Firefox"
     ],
     "heroImage": "/assets/dotfiles/home.png",
-    "images": [
+    "slides": [
       {
-        "image": "/assets/dotfiles/home.png",
+        "kind": "image",
+        "src": "/assets/dotfiles/home.png",
+        "tag": "Workspace",
         "caption": "Desktop Home Workspace Setup"
       },
       {
-        "image": "/assets/dotfiles/nvim.png",
+        "kind": "image",
+        "src": "/assets/dotfiles/nvim.png",
+        "tag": "Editor",
         "caption": "Neovim IDE Configuration"
       },
       {
-        "image": "/assets/dotfiles/launcher.png",
+        "kind": "image",
+        "src": "/assets/dotfiles/launcher.png",
+        "tag": "UI",
         "caption": "Custom Rofi App Launcher"
       },
       {
-        "image": "/assets/dotfiles/browser.png",
+        "kind": "image",
+        "src": "/assets/dotfiles/browser.png",
+        "tag": "Styling",
         "caption": "Styled Web Browser Integration"
       },
       {
-        "image": "/assets/dotfiles/file_editor.png",
+        "kind": "image",
+        "src": "/assets/dotfiles/file_editor.png",
+        "tag": "Terminal",
         "caption": "Terminal File Manager"
       }
     ],
-    "challenge": "Balancing cutting-edge Wayland visuals with rock-solid X11 reliability for productivity. The primary hurdle was building a cohesive, minimal design system across both Hyprland and Qtile that shared configurations seamlessly while maintaining low system overhead, fast startup times, and quick keyboard-driven workflows.",
-    "approach": "I designed a modular dotfile architecture built around Arch Linux, featuring Hyprland as my primary Wayland compositor and Qtile for X11 fallback. I created unified custom Rofi launcher scripts, an integrated notification center, and custom Waybar/Polybar modules to streamline window management and daily dev workflows.",
+    "challenge": "The main challenge with maintaining a Linux setup is keeping everything consistent without turning the configuration into a collection of random tweaks. I wanted the system to stay modular, easy to understand, and lightweight. Every part of the desktop had to serve a purpose, while custom scripts and services needed to work together without adding unnecessary overhead.",
+    "approach": "My main focus with this project was the architecture of the system rather than its appearance. I chose GNU tools because of their simplicity and modularity, then structured the configuration so individual components could be changed without affecting the rest of the setup. Hyprland handles the current Wayland desktop while my previous Qtile and X11 configuration is still maintained. Around it, I built a consistent development workflow, custom utilities, and lightweight desktop services.",
     "metrics": [
       {
-        "value": "< 0.2s",
-        "label": "App Launch Latency",
-        "sub": "Optimized Rofi & custom Bash scripts"
+        "value": "50%",
+        "label": "Idle CPU Reduction",
+        "sub": "Optimized moving wallpapers from roughly 20% idle CPU usage to 10%"
       },
       {
-        "value": "2 Workspaces",
-        "label": "Dual Ecosystems",
-        "sub": "Wayland (Hyprland) & X11 (Qtile) parity"
+        "value": "2",
+        "label": "Display Architectures",
+        "sub": "Maintains both the current Wayland setup and previous X11 configuration"
       },
       {
         "value": "100%",
-        "label": "Keyboard Driven",
-        "sub": "Custom keybindings for zero-mouse dependency"
+        "label": "Custom Workflow",
+        "sub": "Development, desktop, browser, and system utilities configured around a single workflow"
       }
     ],
     "process": [
       {
         "phase": "01",
-        "title": "Core Setup & Base OS",
-        "desc": "Stripped down an Arch Linux installation to the bare essentials. Mapped out workspace workflows, directory structures, and shared configuration files to keep the setup easily reproducible via stow/git."
+        "title": "Architecture",
+        "desc": "I started with modularity as the main principle. GNU utilities made it easy to keep individual pieces of the system separate and predictable. Instead of relying on one large configuration, each component has its own configuration and can be changed independently."
       },
       {
         "phase": "02",
-        "title": "WM Architecture & Aesthetics",
-        "desc": "Configured Hyprland with dynamic tiling, smooth animations, and Waybar. Set up Qtile as an X11 fallback, synchronizing themes, color palettes, fonts, and window rules across both desktop environments."
+        "title": "Desktop",
+        "desc": "The desktop evolved from Qtile and X11 into my current Hyprland and Wayland setup. I configured Waybar, Rofi, and SwayNC around the workflow I actually use, including a custom Rofi theme and notification setup. The older X11 configuration remains available rather than being discarded."
       },
       {
         "phase": "03",
-        "title": "Custom Scripts & Automation",
-        "desc": "Wrote custom Bash and Python utilities for Rofi menus (app launcher, power menu, clipboard manager), notification daemon controls, and workspace status widgets to maximize daily development efficiency."
+        "title": "Optimization",
+        "desc": "System scripts handle repetitive tasks such as Wi-Fi, Bluetooth, screenshots, and window capture. I also experimented with moving wallpapers, but the initial version used too much CPU while idle. I slowed and simplified the rendering until I found a version that kept the effect without wasting resources, cutting idle CPU usage from around 20% to 10%."
       }
     ],
-    "outcome": "Created a lightweight, highly responsive, and aesthetically pleasing Linux environment tailored for extreme productivity. The system boots in seconds, runs with minimal RAM usage, and features fully unified keybindings and styling between Wayland and X11 sessions.",
+    "outcome": "This project became less about customizing Linux and more about designing a system that behaves exactly how I expect it to. The configuration is modular, portable, and easy to modify when my workflow changes. My development environment, desktop, browser, and system utilities all follow the same philosophy: keep things simple, remove unnecessary overhead, and automate the repetitive parts.",
     "features": [
       {
-        "key": "dual_wm_setup",
-        "label": "Dual Compositor Architecture",
-        "desc": "Hyprland (Wayland) primary with Qtile (X11) fallback for maximum compatibility",
+        "key": "modular_architecture",
+        "label": "Modular Configuration Architecture",
+        "desc": "separate system configurations built around simple, composable GNU tools",
         "highlight": true,
-        "detail": "Engineered a flexible desktop framework using Hyprland for modern animations/Wayland features while maintaining a fully synced Qtile setup on X11 for legacy screen sharing and app support."
+        "detail": "The dotfiles are organized by application and responsibility, allowing individual components to be changed, replaced, or restored without restructuring the entire system."
       },
       {
-        "key": "custom_rofi_suite",
-        "label": "Custom Rofi Launchers & Scripts",
-        "desc": "Extensible key-driven launcher for apps, power controls, and window navigation",
+        "key": "wayland_desktop",
+        "label": "Wayland Desktop Environment",
+        "desc": "Hyprland setup with custom window management, notifications, panels, and application launcher",
         "highlight": true,
-        "detail": "Tailored Rofi themes and scripts to serve as an all-in-one command palette, handling system power menus, audio output toggling, clipboard history, and rapid app launching."
+        "detail": "Hyprland provides the current window management layer, with Waybar, Rofi, and SwayNC configured to fit the same workflow. Previous Qtile and X11 configurations are also preserved."
       },
       {
-        "key": "unified_status_bar",
-        "label": "Dynamic Waybar & Notification Panel",
-        "desc": "Real-time system monitoring, workspace indicators, and customized alert center",
+        "key": "development_workflow",
+        "label": "Integrated Development Workflow",
+        "desc": "Neovim and terminal tooling configured around a consistent development workflow",
         "highlight": true,
-        "detail": "Configured Waybar with custom CSS modules for CPU/RAM telemetry, active workspace tracking, and media controls, paired with a styled notification panel for seamless alerts."
+        "detail": "Neovim was configured from scratch with custom keybindings, language tooling, navigation, completion, formatting, and project workflows. Tmux provides persistent multi-terminal sessions without relying on a graphical terminal layout."
       },
       {
-        "key": "productivity_tiling",
-        "label": "Productivity-Focused Window Rules",
-        "desc": "Automated workspace placement, smart gaps, and floating window overrides",
+        "key": "system_automation",
+        "label": "System Automation Scripts",
+        "desc": "small shell utilities for common desktop and system operations",
         "highlight": false,
-        "detail": "Defined strict window rules across both WMs to automatically route development tools, terminals, browsers, and communication apps to designated workspaces on startup."
+        "detail": "Custom scripts simplify Wi-Fi and Bluetooth control, screenshots, window capture, and screen selection. Repetitive system actions become single commands instead of manual sequences."
       },
       {
-        "key": "dotfile_management",
-        "label": "Modular Dotfile Versioning",
-        "desc": "Version-controlled setup structured for rapid deployment across new machines",
+        "key": "performance_optimization",
+        "label": "Performance-Focused Desktop",
+        "desc": "system effects tuned around resource usage rather than visual effects alone",
         "highlight": false,
-        "detail": "Organized configuration files into modular directories managed via Git and GNU Stow, allowing single-command installation and seamless updates."
+        "detail": "Moving wallpapers were initially too expensive to run continuously, consuming around 20% CPU while idle. The rendering speed and workload were reduced until the same idea could run at roughly half the idle CPU usage."
+      },
+      {
+        "key": "browser_customization",
+        "label": "Minimal Browser Environment",
+        "desc": "Firefox interface redesigned around a clean and distraction-free workflow",
+        "highlight": false,
+        "detail": "Custom userChrome.css and userContent.css configurations control the browser's interface and page presentation, keeping Firefox visually consistent with the rest of the desktop."
       }
     ],
-    "tags": ["Linux"]
+    "tags": ["Linux", "Arch Linux", "Dotfiles"]
   }
 ]

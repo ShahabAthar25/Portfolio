@@ -6,23 +6,12 @@ import Image from "next/image";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { Project } from "@/lib/types/projects";
-
-type CarouselSlide =
-  | { kind: "image"; src: string; tag: string; caption: string }
-  | { kind: "results"; tag: string };
+import { Project, CarouselSlide } from "@/lib/types/projects";
 
 export default function ProjectCarousel({ project }: { project: Project }) {
   const [current, setCurrent] = useState(0);
 
-  const slides: CarouselSlide[] = [
-    {
-      kind: "image",
-      src: project.heroImage,
-      tag: "Overview",
-      caption: project.desc,
-    },
-  ];
+  const slides: CarouselSlide[] = project.slides;
 
   const total = slides.length;
 

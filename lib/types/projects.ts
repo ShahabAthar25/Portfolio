@@ -1,7 +1,9 @@
-type Images = { image: string; caption?: string };
-type Metric = { value: string; label: string; sub: string };
-type Phase = { phase: string; title: string; desc: string };
-type Feature = {
+export type CarouselSlide =
+  | { kind: "image"; src: string; tag: string; caption: string }
+  | { kind: "results"; tag: string };
+export type Metric = { value: string; label: string; sub: string };
+export type Phase = { phase: string; title: string; desc: string };
+export type Feature = {
   key: string;
   label: string;
   desc: string;
@@ -19,7 +21,7 @@ export type Project = {
   role: string;
   duration: string;
   heroImage: string;
-  images: Images[];
+  slides: CarouselSlide[];
   challenge: string;
   approach: string;
   metrics: Metric[];
