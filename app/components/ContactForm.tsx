@@ -33,9 +33,7 @@ export default function ContactForm() {
   };
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Validate using Zod
+    e.preventDefault(); // Validate using Zod
     const result = formDataSchema.safeParse(formData);
 
     if (!result.success) {
@@ -55,11 +53,25 @@ export default function ContactForm() {
     setFormStatus("sending");
 
     try {
-      // API call simulation
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...result.data,
+          recipient: process.env.NEXT_PUBLIC_CONTACT_RECIPIENT_EMAIL,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to dispatch email");
+      }
+
       setFormStatus("sent");
       setFormData(initialFormState);
-    } catch {
+    } catch (error) {
+      console.error("Form submission error:", error);
       setFormStatus("idle");
     }
   };
@@ -68,18 +80,14 @@ export default function ContactForm() {
     <div className="border border-border bg-card p-8">
       {formStatus === "sent" ? (
         <div className="h-full flex flex-col items-start justify-center gap-4 py-12">
-          <div
-            className="text-5xl font-extrabold font-display"
-            style={{ color: "var(--accent)" }}
-          >
+          <div className="text-5xl font-extrabold font-display" style={{ color: "var(--accent)" }}>
             Sent.
           </div>
           <p className="text-foreground leading-relaxed">
             Got it — I&apos;ll be in touch within 24 hours. If it&apos;s urgent,
             feel free to email me directly.
           </p>
-          <button
-            onClick={() => setFormStatus("idle")}
+          <button onClick={() => setFormStatus("idle")}
             className="text-xs font-mono text-foreground hover:text-foreground transition-colors mt-2"
           >
             Send another →
@@ -88,43 +96,27 @@ export default function ContactForm() {
       ) : (
         <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <ContactFormInput
-              label="Your name"
-              name="name"
-              placeholder="Alex, Beatriz, Jordan…"
-              value={formData.name}
-              error={errors.name}
-              onChange={(e) => handleInputChange("name", e.target.value)}
+            <ContactFormInput label="Your name" name="name" placeholder="Alex, Beatriz, Jordan…" value={formData.name}
+              error={errors.name} onChange={(e) => handleInputChange("name", e.target.value)}
             />
-            <ContactFormInput
-              label="Email"
-              name="email"
-              placeholder="you@company.com"
-              value={formData.email}
-              error={errors.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
+            <ContactFormInput label="Email" name="email" placeholder="you@company.com" value={formData.email}
+              error={errors.email} onChange={(e) => handleInputChange("email", e.target.value)}
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label
-              htmlFor="subject"
-              className="text-xs uppercase tracking-widest text-foreground"
-            >
+            <label htmlFor="subject" className="text-xs uppercase tracking-widest text-foreground">
               Subject
             </label>
 
             {/* Relative wrapper for absolute positioning of the chevron */}
             <div className="relative flex items-center">
-              <select
-                id="subject"
-                value={formData.subject}
-                onChange={(e) =>
-                  handleInputChange(
-                    "subject",
-                    e.target.value as FormData["subject"],
-                  )
-                }
+              <select id="subject" value={formData.subject} onChange={(e) =>
+                handleInputChange(
+                  "subject",
+                  e.target.value as FormData["subject"],
+                )
+              }
                 className="w-full bg-secondary border text-foreground px-4 py-3 pr-10 text-sm
                   appearance-none cursor-pointer focus:outline-none focus:border-accent transition-colors duration-200"
               >
@@ -149,11 +141,8 @@ export default function ContactForm() {
             <label className="text-xs uppercase tracking-widest text-foreground">
               What are you building?
             </label>
-            <textarea
-              rows={5}
-              placeholder="Tell me about the project..."
-              value={formData.message}
-              onChange={(e) => handleInputChange("message", e.target.value)}
+            <textarea rows={5} placeholder="Tell me about the project..." value={formData.message} onChange={(e) =>
+              handleInputChange("message", e.target.value)}
               className="w-full bg-secondary border border-border text-foreground placeholder:text-foreground
                 focus:outline-none focus:border-accent transition-colors duration-200 px-4 py-3 text-sm resize-none"
             />
@@ -164,21 +153,13 @@ export default function ContactForm() {
             )}
           </div>
 
-          <button
-            type="submit"
-            disabled={formStatus === "sending"}
+          <button type="submit" disabled={formStatus === "sending"}
             className="flex items-center justify-between gap-4 px-6 py-4 border border-border text-sm font-medium transition-all duration-200 group disabled:opacity-60"
             style={{
-              backgroundColor:
-                formStatus === "sending" ? "var(--accent)" : "transparent",
-              color:
-                formStatus === "sending"
-                  ? "var(--accent-foreground)"
-                  : "var(--foreground)",
-              borderColor:
+              backgroundColor: formStatus === "sending" ? "var(--accent)" : "transparent", color:
+                formStatus === "sending" ? "var(--accent-foreground)" : "var(--foreground)", borderColor:
                 formStatus === "sending" ? "var(--accent)" : undefined,
-            }}
-            onMouseEnter={(e) => {
+            }} onMouseEnter={(e) => {
               if (formStatus === "idle") {
                 (e.currentTarget as HTMLButtonElement).style.backgroundColor =
                   "var(--accent)";
@@ -201,7 +182,8 @@ export default function ContactForm() {
             <span>
               {formStatus === "sending" ? "Sending…" : "Send message"}
             </span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </form>
       )}
