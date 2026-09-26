@@ -15,12 +15,9 @@ export default function Contact() {
           {/* Left: CTA + email + socials */}
           <div className="flex flex-col justify-between gap-12">
             <div>
-              <h2
-                className="font-extrabold font-display leading-[0.88] tracking-tight mb-10"
-                style={{
-                  fontSize: "clamp(3rem, 6vw, 5.5rem)",
-                }}
-              >
+              <h2 className="font-extrabold font-display leading-[0.88] tracking-tight mb-10" style={{
+                fontSize: "clamp(3rem, 6vw, 5.5rem)",
+              }}>
                 Got something
                 <br />
                 to build?
@@ -50,18 +47,13 @@ export default function Contact() {
                       label: "GitHub",
                       url: "https://github.com/ShahabAthar25",
                     },
-                    // Not created next three will do in the future
-                    { label: "LinkedIn", url: "https://linkedin.com" },
-                    { label: "Dribbble", url: "https://dribbble.com" },
-                    { label: "Read.cv", url: "https://read.cv" },
+                    {
+                      label: "LinkedIn",
+                      url: "https://linkedin.com/in/raishahabathar",
+                    },
                   ].map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-foreground hover:text-foreground transition-colors font-mono"
-                    >
+                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer"
+                      className="text-sm flex items-center gap-1 text-foreground hover:text-foreground transition-colors font-mono">
                       {link.label}
                       <ArrowUpRight className="w-3 h-3" />
                     </a>

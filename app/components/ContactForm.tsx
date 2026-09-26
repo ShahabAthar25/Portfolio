@@ -88,7 +88,7 @@ export default function ContactForm() {
             feel free to email me directly.
           </p>
           <button onClick={() => setFormStatus("idle")}
-            className="text-xs font-mono text-foreground hover:text-foreground transition-colors mt-2"
+            className="text-xs cursor-pointer font-mono text-foreground hover:text-foreground transition-colors mt-2"
           >
             Send another →
           </button>
@@ -154,7 +154,7 @@ export default function ContactForm() {
           </div>
 
           <button type="submit" disabled={formStatus === "sending"}
-            className="flex items-center justify-between gap-4 px-6 py-4 border border-border text-sm font-medium transition-all duration-200 group disabled:opacity-60"
+            className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 border border-border text-sm font-medium transition-all duration-200 group disabled:opacity-60"
             style={{
               backgroundColor: formStatus === "sending" ? "var(--accent)" : "transparent", color:
                 formStatus === "sending" ? "var(--accent-foreground)" : "var(--foreground)", borderColor:
