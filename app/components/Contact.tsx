@@ -15,12 +15,15 @@ export default function Contact() {
           {/* Left: CTA + email + socials */}
           <div className="flex flex-col justify-between gap-12">
             <div>
-              <h2 className="font-extrabold font-display leading-[0.88] tracking-tight mb-10" style={{
-                fontSize: "clamp(3rem, 6vw, 5.5rem)",
-              }}>
+              <h2
+                className="font-extrabold font-display leading-[0.88] tracking-tight mb-10"
+                style={{
+                  fontSize: "clamp(3rem, 6vw, 5.5rem)",
+                }}
+              >
                 Got something
                 <br />
-                to build?
+                to <span style={{ color: "var(--accent)" }}>build?</span>
               </h2>
               <p className="text-foreground leading-relaxed max-w-sm">
                 Whether it&apos;s a product from scratch, a redesign, or just a
@@ -52,8 +55,13 @@ export default function Contact() {
                       url: "https://linkedin.com/in/raishahabathar",
                     },
                   ].map((link) => (
-                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-foreground hover:text-foreground transition-colors font-mono">
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm flex items-center gap-1 text-foreground hover:text-foreground transition-colors font-mono"
+                    >
                       {link.label}
                       <ArrowUpRight className="w-3 h-3" />
                     </a>
